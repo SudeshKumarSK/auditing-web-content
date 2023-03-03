@@ -1,17 +1,16 @@
 '''
-Author : Sudesh Kumar S
+Author : Sudesh Kumar S.
 GitHub: https://github.com/sudeshkumarsk
 email: sudesh.skofficial@gmail.com / santhosh@usc.edu
-Project Name : Auditing Web Content to identify Eating Disorders
-Developed with python 3.8 using Conda virtual environment
+Project Name : Auditing Web Content to identify Eating Disorders.
+Developed with python 3.8 using Conda virtual environment.
 
 '''
 
 # Importing all necessary packages and libraries
 import pytumblr
 
-
-
+# The main tumblrEngine() which can be used to scrap data from tumblr micro-blogging site
 class TumblrEngine():
     
     def __init__(self, apiDetails):
@@ -24,6 +23,7 @@ class TumblrEngine():
     # User-defined function to extract blog_name and id for the top 20 posts that come up from the passed timestamp.
     def getTaggedPostsUserData(self, tagName, timestamp):
 
+        # The response object to be returned when we don't find any blogs with the passed tag name.
         result = {
             "status" : False,
             "response" : "",
@@ -31,6 +31,7 @@ class TumblrEngine():
             "timestamp" : 0
         }
 
+        # Finding posts with the tag passed by the user.
         taggedPosts = self.tumblrClient.tagged(tagName, before=timestamp)
 
         if len(taggedPosts) == 0:
