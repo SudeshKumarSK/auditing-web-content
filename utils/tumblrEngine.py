@@ -16,6 +16,7 @@ class TumblrEngine():
     def __init__(self, apiDetails):
         self.OAuth_Consumer_Key = apiDetails["OAuth_Consumer_Key"] 
         self.OAuth_Consumer_Secret = apiDetails["OAuth_Consumer_Secret"]
+        
         # Creating an instance for the TumblrRestClient class()
         self.tumblrClient = pytumblr.TumblrRestClient(self.OAuth_Consumer_Key)
 
